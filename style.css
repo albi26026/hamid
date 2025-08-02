@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Jura';
+    transition: 0.5s;
+}
+@font-face {
+    font-family: 'Jura';
+    src: url('Jura-Bold.ttf');
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: url(fon.png);
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+.container {
+    padding: 20px;
+    max-width: 90vw;
+    background: #fc3d8682;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 0, 100, 0.4);
+    margin: 20px;
+}
+input[type="text"], button {
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+input[type="text"] {
+    width: 80%;
+}
+button {
+    background-color: #ff2e7e;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #e60073;
+}
+.image-clickable {
+    margin-top: 20px;
+    width: 20vh;
+    height: 20vh;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    background-size: cover;
+    transition: 0.3s;
+}
+.image-clickable:hover {
+    border-color: #ff2e7e;
+}
+@media screen and (max-width: 600px) {
+    input[type="text"] {
+    width: 100%;
+    }
+    .image-clickable {
+    width: 60px;
+    }
+}

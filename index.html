@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hamid</title>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+  <div class="container" id="start">
+    <h1>Привет, бро!</h1>
+    <p>Если тебе скучно, то давай поиграем чуть-чуть, если что вернись позже, буду ждать, йоу!</p>
+    <button onclick="nextStep('q1')">Начать</button>
+  </div>
+
+  <div class="container hidden" id="q1">
+    <h2>Кто твой лучший друг?</h2>
+    <p>Ну тут легко, ты его очень любишь и я его даже спутала с твоим братом</p>
+    <input type="text" id="answer1">
+    <br>
+    <button onclick="checkAnswer1()">Ответить</button>
+  </div>
+
+  <div class="container hidden" id="q2">
+    <h2>Твоя любимка</h2>
+    <p>Найди маюшку</p>
+    <div>
+      <img src="ne.jpg" class="image-clickable" onclick="fail()">
+      <img src="may.jpg" class="image-clickable" onclick="nextStep('q3')">
+      <img src="net.jpg" class="image-clickable" onclick="fail()">
+    </div>
+  </div>
+
+  <div class="container hidden" id="q3">
+    <h2>Когда начали встречаться?</h2>
+    <p>Введи чисто день, который мы сами выбрали</p>
+    <input type="text" id="code">
+    <br>
+    <button onclick="checkCode()">Проверить</button>
+  </div>
+
+  <div class="container hidden" id="final">
+    <h2>Ну умничка ваще</h2>
+    <p>Все правильно! Ты крутой</p>
+    <div style="margin-top: 20px; text-align: left; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+      <p>Бро,</p>
+      <p>Спасибо, что прошел эти вопросики, сделала чисто по приколу, ну такой экспириенс для тебя, ты там поменьше грусти, не забывай таблетки во время пить, ты очень мили, красивый и вообще самый лучший!</p>
+      <p>Все будет круто, отвечаю</p>
+      <p>Простите за сумбурный текст</p>
+    </div>
+    <br>
+    <a href="https://gifft.me/ru/o/3d/gr1034bme8dpu4cp7hui3s1e" target="_blank"><button>Открыть сюрприз</button></a>
+  </div>
+
+   <script>
+    function nextStep(id) {
+      document.querySelectorAll('.container').forEach(el => el.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function checkAnswer1() {
+    const answer = document.getElementById('answer1').value.toLowerCase().trim();
+    const validAnswers = ['егор', 'yegor', 'егорка', 'егор клитор', 'egor'];
+    if (validAnswers.includes(answer)) {
+        nextStep('q2');
+    }  else {
+            alert('Нее ты че, подумай еще');
+        } 
+    }
+
+    function fail() {
+      alert('Ну нет, думай дальше');
+    }
+
+    function checkCode() {
+      const code = document.getElementById('code').value.trim();
+      if (code === '20') {
+
+        nextStep('final');
+      } else {
+        alert('Ты чего, еще раз');
+      }
+    }
+  </script>
+</body>
+</html>
